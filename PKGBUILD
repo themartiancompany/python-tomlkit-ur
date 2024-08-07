@@ -31,6 +31,7 @@ check() {
 
 package() {
 	cd "$_archive"
-	python -m installer -d "$pkgdir" dist/*.whl
+	python \
+	-m installer --d "$pkgdir" dist/*.whl
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 }
